@@ -40,6 +40,5 @@ for vv = 1:n
     set(gca,'GridLineStyle','-','Layer','bottom')
     set(gcf,'paperpositionmode','auto')
     set(gcf, 'position', [0 0 800 200]);
-    print(gcf,'-depsc2','-loose',strcat(path,'varhd_', num2str(vv)));
+    print(gcf,'-dpng','-loose',strcat(path,'varhd_', num2str(vv),'.png'));
 end
-

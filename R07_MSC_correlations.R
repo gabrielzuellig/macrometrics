@@ -112,28 +112,28 @@ msc$by[msc$by == 'NANA'] <- NA
 mscprev$by = paste0(round(mscprev$date, 2), '-', mscprev$ID)
 msc <- merge(msc, mscprev[, c('by','u_p4','ec_p4','pi_p4')], by='by',
              all.x=TRUE, suffixes = c('','.l1'))
-msc <- subset(msc, select=-c(by, CASEID, ID, IDPREV))
-msc <- msc[order(msc$date), ]
-rm(mscprev)
-# Transform wide to long
-msc2 <- msc[msc$hasprevious == TRUE, ]
-msc2$hhid = c(1:nrow(msc2))
-colnames(msc2)[which(colnames(msc2) == 'prevdate')] <- 'date.l1'
-msc2 <- reshape(msc2, direction='long', 
-                varying=c('ec_p4', 'u_p4', 'pi_p4', 'ec_p4.l1', 'u_p4.l1', 'pi_p4.l1'), 
-                timevar='intid',
-                v.names=c('ec_p4', 'u_p4', 'pi_p4'),
-                idvar='hhid')
-msc2 <- msc2[order(msc2$hhid, msc2$date), ]
+msc <- msc[order(msc$date, msc$ID), ]
+# Transform wide to long 
+round2 <- mscprev[mscprev$hasprevious == TRUE, ]
+round1 <- mscprev[mscprev$hasprevious == FALSE, ]
+round1$prevdate <- round1$date
+round1$IDPREV <- round1$ID
+msc_long <- rbind(round1, round2)
+rm(mscprev, round1, round2)
+library(dplyr)
+msc_long <- msc_long %>% group_by(prevdate,IDPREV) %>% mutate(hhid = cur_group_id(), nint=length(ID))
+msc_long <- msc_long[msc_long$nint == 2, ]
+msc_long <- data.frame(msc_long[order(msc_long$hhid, msc_long$date), ])
 
 
 ## Regress inflation outlook on unemployment with time and person fixed effect
-reg3a <- felm(pi_p4 ~ u_p4 | date + hhid, data=msc2)
+reg3a <- felm(pi_p4 ~ u_p4 | date + hhid, data=msc_long)
 stargazer(reg1a, reg2a, reg3a, type='text')
 
 
 ## Repeat everything with economic outlook
 reg1b <- lm(pi_p4 ~ ec_p4, data=msc)
 reg2b <- felm(pi_p4 ~ ec_p4 | date, data=msc)
-reg3b <- felm(pi_p4 ~ ec_p4 | date + hhid, data=msc2)
+reg3b <- felm(pi_p4 ~ ec_p4 | date + hhid, data=msc_long)
 stargazer(reg1b, reg2b, reg3b, type='text')
+

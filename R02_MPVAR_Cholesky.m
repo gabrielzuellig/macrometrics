@@ -29,6 +29,7 @@ shocksize = 0; % 0 = one standard deviation, all else: absolute values
 state.nonlinear = 'no';
 nboot = 1000;
 alpha = 90; %confidence level
+ignoreyears = [2020, 2021];  % years to ignore in regression (e.g. covid)
 
 
 %% Load data, generate lags, subset relevant subsample, etc.
@@ -37,7 +38,7 @@ subset_data;
 
     
 %% Estimate matrices A, Omega, S, dynamic multipliers
-VAR = estimateVAR(data, p, c_case, exdata);
+VAR = estimateVAR(data, p, c_case, exdata, timeinreg);
 VAR.C = dyn_multipliers(VAR, h); % not identified
 
 

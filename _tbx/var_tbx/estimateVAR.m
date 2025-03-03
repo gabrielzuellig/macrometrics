@@ -1,8 +1,11 @@
-function [VAR] = estimateVAR(data, p, c_case, exdata)
+function [VAR] = estimateVAR(data, p, c_case, exdata, timeinreg)
 
 % Prep
 t = size(data, 1);
 n = size(data, 2);
+if nargin < 5  % if 'timeinreg' is not provided, take all values into regression
+    timeinreg = ones(t,1);
+end
 
 %% Y matrix
 Y = data;
@@ -15,6 +18,7 @@ end
 % lags introduce some NA's => truncate
 X = X(p+1:end,:); 
 Y = Y(p+1:end,:);
+timeinreg = timeinreg(p+1:end,1);
 % add constant and/or trend to X matrix
 if c_case == 0
     c = [];
@@ -36,9 +40,11 @@ else
     Xex = [];
 end
 X = [c, X, Xex];
+Xinreg = X(timeinreg == 1,:);
+Yinreg = Y(timeinreg == 1,:);
 
 %% Estimation
-A = X\Y;  % a_ij is reaction of column j to row i
+A = Xinreg\Yinreg;  % a_ij is reaction of column j to row i
 u = Y - X*A;  % reduced-form residuals
 Omega = cov(u);  % variance-covariance matrix
 S = chol(Omega)';  % lower-triangular matrix (Cholesky decomposition)

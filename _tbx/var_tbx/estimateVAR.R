@@ -1,8 +1,11 @@
-estimateVAR <- function(data, p, c_case, exdata=NULL){
+estimateVAR <- function(data, p, c_case, exdata=NULL, timeinreg=NULL){
   
   # Prep
   t <- nrow(data)
   n <- ncol(data)
+  if (is.null(timeinreg)){
+    timeinreg <- c(rep(1, t))
+  }
   
   # Y matrix
   Y <- unname(as.matrix(data))
@@ -15,6 +18,7 @@ estimateVAR <- function(data, p, c_case, exdata=NULL){
   # lags introduce some NA's => truncate
   X <- X[(p+1):nrow(X), ]
   Y <- Y[(p+1):nrow(Y), ]
+  timeinreg <- timeinreg[(p+1):length(timeinreg)]
   # add constant and/or trend to X matrix
   if (c_case == 0){
     c <- NULL
@@ -34,13 +38,15 @@ estimateVAR <- function(data, p, c_case, exdata=NULL){
     Xex <- Xex[(p+1):nrow(Xex), ]
   }
   X <- cbind(c, X, Xex)
+  Xinreg <- X[timeinreg == 1,]
+  Yinreg <- Y[timeinreg == 1,]
   
   # estimation
-  if (qr(t(X) %*% X)$rank == 1){
+  if (qr(t(Xinreg) %*% Xinreg)$rank == 1){
     Sys.sleep(1)
     stop('System is computationally singular.')
   }
-  A <- solve(t(X) %*% X) %*% (t(X) %*% Y) # OLS: beta = inv(x'x) * (x'y)
+  A <- solve(t(Xinreg) %*% Xinreg) %*% (t(Xinreg) %*% Yinreg) # OLS: beta = inv(x'x) * (x'y)
   u <- Y - X%*%A # reduced-form residuals
   Omega <- cov(u)  # variance-covariance matrix
   if (sum(is.na(Omega)) > 0){

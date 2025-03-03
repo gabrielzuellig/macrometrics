@@ -117,14 +117,13 @@ plot(chicagoq)
 hold on
 plot(GDPgrowth)
 chicagoq = chicagoq(2:end, 1);
-%chicagoq = [ones(size(chicagoq)), chicagoq];
 GDPgrowth = GDPgrowth(2:end, 1);
 chicagoq'*chicagoq \ chicagoq'*GDPgrowth
 clear chicagom chicagoq factor GDPgrowth month year quarter qq qvalues
 
 % monthly output gap: compare own measure to quarterly CBO measure and
 % hp-filtered version
-dataq = dataq(1:215,[3 6]); % real GDP level; CBO output gap
+dataq = dataq(1:232,[3 6]); % real GDP level; CBO output gap
 dataq(:,1) = 100*log(dataq(:,1));  % 100*log(GDP)
 dataq(:,3) = hpfilter(dataq(:,1), 1600); % hp-filtered potential
 dataq(:,4) = dataq(:,1) - dataq(:,3); % hp-filtered gap

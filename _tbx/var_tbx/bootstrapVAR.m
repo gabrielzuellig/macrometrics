@@ -88,7 +88,7 @@ for bb = 1:1:nboot  % 'nboot' bootstraps
             r = [r, Xex(i,:)];
         end
     end
-    data = Yb(end-size(VAR.u)+1:end,:);
+    data = Yb((end-size(VAR.u,1)+1):end,:);
     if strcmp(VAR.ident, 'proxy')
         zb = VAR.z.*fu;
         zb = zb(p+1:end,:);

@@ -8,7 +8,7 @@
 rm(list = ls())
 
 # before running, set working directory to source file location and comment out the following line
-setwd('~/Dropbox/Teaching/Basel2024/macrometrics/')
+setwd('~/Dropbox/Teaching/Basel2025/macrometrics/')
 source('_tbx/supportfct/compileRfct.R');
 
 
@@ -25,13 +25,14 @@ shocksize <- 0 # 0 = one standard deviation, all else: absolute values
 state <- list(nonlinear='no')
 nboot <- 1000
 alpha <- 90 # confidence level
+ignoreyears <- c(2020, 2021)  # years to ignore in regression (e.g. covid)
 
 ## Load data, generate lags, subset relevant subsample, etc.
 load(file='data/data_m_ready.RData')
 source('_tbx/supportfct/subset_data.R', echo=T);
 
 ## Estimate matrices A, Omega, S, dynamic multipliers
-VAR <- estimateVAR(data, p, c_case, exdata)
+VAR <- estimateVAR(data, p, c_case, exdata, timeinreg)
 VAR$C <- dyn_multipliers(VAR, h) # not identified
 
 ## Identification: Cholesky

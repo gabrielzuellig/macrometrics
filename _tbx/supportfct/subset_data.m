@@ -61,29 +61,13 @@ if strcmp(state.nonlinear, 'yes') && strcmp(state.logistic, 'yes')
 end
 
 
-% ignore data before 1965
-data = data(time >= 1965, :);
-exdata = exdata(time >= 1965, :);
-if strcmp(ident, 'proxy')
-    z = z(time >= 1965, :);
+% mark observations to be ignored (e.g. covid period)
+timeinreg = ones(size(time));
+if ~isnan(ignoreyears(1))
+    for yy = 1:length(ignoreyears)
+        timeinreg(floor(time) == ignoreyears(yy)) = 0;
+    end
 end
-if strcmp(state.nonlinear, 'yes') && strcmp(state.logistic, 'yes')
-    s = s(time >= 1965, :);
-end
-time = time(time >= 1965, :);
-
-
-% end period: ignore data from 2020 onwards (hard-coded for now, more
-% flexible in next version of toolbox)
-data = data(time < 2020, :);
-time = time(time < 2020);
-if strcmp(ident, 'proxy')
-    z = z(time < 2020, :);
-end
-if strcmp(state.nonlinear, 'yes') && strcmp(state.logistic, 'yes')
-    s = s(time < 2020, :);
-end
-exdata = exdata(time < 2020, :);
 
 
 % Logistic transformation of s-variable
@@ -223,4 +207,4 @@ if strcmp(state.nonlinear, 'yes')
     print(gcf,'-dpng','-loose',strcat(folder,'state.png'));
 end
 
-clear vv col nona xt00 xt nrow s col1 col2
+clear vv col nona yy xt00 xt nrow s col1 col2

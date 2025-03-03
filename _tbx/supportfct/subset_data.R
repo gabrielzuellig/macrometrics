@@ -55,31 +55,11 @@ if (!is.null(z)){
   z <- as.matrix(z[nona, ], nrow=sum(nona))
 }
 
-# ignore data before 1965
-data <- data[time >= 1965, ]
-if (!is.null(exdata)){
-  exdata <- as.matrix(exdata[time >= 1965, ], nrow=nrow(data))
+# mark observations to be ignored (e.g. covid period)
+timeinreg <- c(rep(1, length(time)))
+if (!is.na(ignoreyears[1])){
+  timeinreg[floor(time) %in% ignoreyears] <- 0
 }
-if (!is.null(s)){
-  s <- as.matrix(s[time >= 1965, ], nrow=nrow(data))
-}
-if (!is.null(z)){
-  z <- as.matrix(z[time >= 1965, ], nrow=nrow(data))
-}
-time <- time[time >= 1965]
-
-# ignore 2020 data
-data <- data[time < 2020, ]
-if (!is.null(exdata)){
-  exdata <- as.matrix(exdata[time < 2020, ], nrow=nrow(data))
-}
-if (!is.null(s)){
-  s <- as.matrix(s[time < 2020, ], nrow=nrow(data))
-}
-if (!is.null(z)){
-  z <- as.matrix(z[time < 2020, ], nrow=nrow(data))
-}
-time <- time[time < 2020]
 
 # Logistic transformation of s-variable 
 if (state$nonlinear == 'yes'){

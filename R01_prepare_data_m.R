@@ -7,7 +7,7 @@
 rm(list = ls())
 
 # before running, set working directory to source file location and comment out the following line
-setwd('~/Dropbox/Teaching/Basel2024/macrometrics/')
+setwd('~/Dropbox/Teaching/Basel2025/macrometrics/')
 source('_tbx/supportfct/compileRfct.R');
 
 
@@ -103,13 +103,13 @@ GDPgrowth <- dataq$GDPgrowth[1:length(chicagoq)]
 plot(1:length(chicagoq), chicagoq, 'l')
 lines(1:length(chicagoq), GDPgrowth, 'l', col='blue')
 chicagoq <- chicagoq[2:length(chicagoq)]
-GDPgrowth <- GDPgrowth[2:length(chicagoq)]
+GDPgrowth <- GDPgrowth[2:length(GDPgrowth)]
 lm(GDPgrowth ~ 0 + chicagoq)
 rm(chicagom, chicagoq, GDPgrowth, month, year, quarter, qq, qvalues)
 
 # monthly output gap: compare own measure to quarterly CBO measure and
 # hp-filtered version
-dataq <- dataq[1:215, c('GDP','GDPgap')] # real GDP level; CBO output gap
+dataq <- dataq[1:232, c('GDP','GDPgap')] # real GDP level; CBO output gap
 dataq$GDP = 100*log(dataq$GDP);  # 100*log(GDP)
 hp <- hpfilter(dataq$GDP, type='lambda', freq=1600)
 dataq$GDPhppot <- hp$trend #  hp-filtered potential

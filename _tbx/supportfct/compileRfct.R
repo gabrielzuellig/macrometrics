@@ -2,6 +2,8 @@
 # Load packages
 if (!require('gdata')) install.packages('gdata')
 library(gdata)
+if (!require('xlsx')) install.packages('xlsx')
+library(xlsx)
 if (!require('mFilter')) install.packages('mFilter')
 library(mFilter)
 if (!require('sandwich')) install.packages('sandwich')

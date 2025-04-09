@@ -12,7 +12,7 @@ source('_tbx/supportfct/compileRfct.R');
 
 
 ## Import
-xlsdata <- read.xls('data/data_m_in.xlsx')
+xlsdata <- read.xlsx('data/data_m_in.xlsx', 1, stringsAsFactors=F)
 data <- xlsdata[,3:ncol(xlsdata)]
 labels <- colnames(data)
 

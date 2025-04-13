@@ -1,0 +1,947 @@
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      CODEBOOK
+
+
+                                Surveys of Consumers
+                                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Surveys of Consumers                                              Page i
+
+
+                                      CONTENTS
+
+
+      item                                                                page
+
+      CASEID             CASE IDENTIFICATION NUMBER                          1
+      YYYYMM             SURVEY YEAR & MONTH                                 1
+      YYYYQ              SURVEY YEAR & QUARTER                               1
+      YYYY               SURVEY YEAR                                         1
+      ID                 INTERVIEW ID                                        1
+      IDPREV             PREVIOUS ID IN RDD                                  1
+      DATEPR             DATE OF PREVIOUS INTERVIEW                          2
+      ICS                INDEX OF CONSUMER SENTIMENT                         2
+      ICC                INDEX OF CURRENT ECONOMIC CONDITIONS                2
+      ICE                INDEX OF CONSUMER EXPECTATIONS                      2
+      PAGO               PERSONAL FINANCES B/W YEAR AGO                      3
+      PAGOR1             REASONS: FINANCES B/W YR AGO (1)                    4
+      PAGOR2             REASONS: FINANCES B/W YR AGO (2)                    5
+      PAGO5              PERSONAL FINANCES B/W YEAR AGO                      6
+      PEXP               PERSONAL FINANCES B/W NEXT YEAR                     6
+      PEXP5              PERSONAL FINANCES B/W IN 5YRS                       7
+      INEXQ1             FAMILY INCOME U/D NEXT YEAR                         7
+      INEXQ2             FAMILY INCOME % U/D NEXT YEAR                       7
+      INEX               FAMILY INCOME EXPECTATIONS 1 YEAR RECODED           8
+      RINC               REAL FAMILY INCOME NEXT 1-2 YEARS                   8
+      BAGO               ECONOMY BETTER/WORSE YEAR AGO                       8
+      BEXP               ECONOMY BETTER/WORSE NEXT YEAR                      9
+      BUS12              ECONOMY GOOD/BAD NEXT YEAR                          9
+      BUS5               ECONOMY GOOD/BAD NEXT 5 YEARS                      10
+      NEWS1              NEWS HEARD OF CHANGES IN BUS COND (1)              10
+      NEWS2              NEWS HEARD OF CHANGES IN BUS COND (2)              10
+      UNEMP              UNEMPLOYMENT MORE/LESS NEXT YEAR                   11
+      GOVT               GOVERNMENT ECONOMIC POLICY                         11
+      RATEX              INTEREST RATES UP/DOWN NEXT YEAR                   12
+      PX1Q1              PRICES UP/DOWN NEXT YEAR                           12
+      PX1Q2              PRICES % UP/DOWN NEXT YEAR                         13
+      PX1                PRICE EXPECTATIONS 1YR RECODED                     13
+      PX5Q1              PRICES UP/DOWN NEXT 5 YEARS                        13
+      PX5Q2              PRICES % UP/DOWN NEXT 5 YEARS                      14
+      PX5                PRICE EXPECTATIONS 5YR RECODED                     14
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 1
+
+
+      CASEID             CASE IDENTIFICATION NUMBER
+
+           Data type: numeric
+           Record/columns: 1/1-6
+
+      ________________________________________________________________________
+
+      YYYYMM             SURVEY YEAR & MONTH
+
+           Survey Year & Month
+
+           Data type: numeric
+           Record/columns: 1/8-13
+
+      ________________________________________________________________________
+
+      YYYYQ              SURVEY YEAR & QUARTER
+
+           Survey Year & Quarter
+
+           Data type: numeric
+           Record/columns: 1/15-19
+
+      ________________________________________________________________________
+
+      YYYY               SURVEY YEAR
+
+           Survey Year
+
+           Data type: numeric
+           Record/columns: 1/21-24
+
+      ________________________________________________________________________
+
+      ID                 INTERVIEW ID
+
+           Interview ID
+
+           Data type: numeric
+           Record/columns: 1/26-36
+
+      ________________________________________________________________________
+
+      IDPREV             PREVIOUS ID IN RDD
+
+           Previous ID
+
+           Data type: numeric
+           Record/columns: 1/38-41
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 2
+
+
+      DATEPR             DATE OF PREVIOUS INTERVIEW
+
+           Previous Date
+
+           Data type: numeric
+           Record/columns: 1/43-48
+
+      ________________________________________________________________________
+
+      ICS                INDEX OF CONSUMER SENTIMENT
+
+           The Index of Consumer Sentiment
+
+           Data type: numeric
+           Decimals: 2
+           Record/columns: 1/50-55
+
+      ________________________________________________________________________
+
+      ICC                INDEX OF CURRENT ECONOMIC CONDITIONS
+
+           The Index of Current Economic Conditions
+
+           Data type: numeric
+           Decimals: 2
+           Record/columns: 1/57-62
+
+      ________________________________________________________________________
+
+      ICE                INDEX OF CONSUMER EXPECTATIONS
+
+           The Index of Consumer Expectations
+
+           Data type: numeric
+           Decimals: 2
+           Record/columns: 1/64-69
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 3
+
+
+      PAGO               PERSONAL FINANCES B/W YEAR AGO
+
+           We are interested in how people are getting along financially
+           these days. Would you say that you are better off or worse off
+           financially than you were a year ago?
+
+           VALUE  LABEL
+               1  Better now
+               3  Same
+               5  Worse now
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/71
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 4
+
+
+      PAGOR1             REASONS: FINANCES B/W YR AGO (1)
+
+           Why do you say so?  (Are there any other reasons?)
+
+           VALUE  LABEL
+               0  No change and no pro-con reason given
+              10  FAV Better pay
+              11  FAV Higher income from self-employment or property
+              12  FAV More work, hence more income
+              13  FAV Increased contributions from outside FU
+              14  FAV Lower prices
+              15  FAV Lower taxes; low or unchanged taxes
+              16  FAV Decreased expenses
+              18  FAV Higher interest rates; tight credit
+              19  FAV Better asset position
+              20  FAV Debt, interest or debt payments low or lower
+              21  FAV Change in family composition - higher income or better off
+              23  FAV Good times, no recession (not codeable above)
+              27  FAV Other reasons for making FU better off
+              38  FAV Reference to government economic policy
+              39  FAV Income tax refund
+              50  UNFAV Lower pay
+              51  UNFAV Lower income from self-employment or property
+              52  UNFAV Less work, hence less income
+              53  UNFAV Decreased/Unchanged contributions from outside FU
+              54  UNFAV High(er) prices
+              55  UNFAV Higher interest rates; tight credit
+              56  UNFAV High, higher taxes (except 57)
+              57  UNFAV Income taxes
+              58  UNFAV Increased expenses; more people to be supported by FU
+              59  UNFAV Worse asset position
+              60  UNFAV Debt
+              61  UNFAV Change in family composition - lower income or worse off
+              63  UNFAV Bad times, recession (not codeable above)
+              64  UNFAV Strike(s)-- not codeable in 52
+              67  UNFAV Other reasons for making FU worse off
+              78  UNFAV Reference to government economic policy
+              98  DK
+              99  NA
+             333  No change and no pro-con reason given (Web only)
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/73-75
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 5
+
+
+      PAGOR2             REASONS: FINANCES B/W YR AGO (2)
+
+           Why do you say so?  (Are there any other reasons?)
+
+           VALUE  LABEL
+               0  No second mention
+              10  FAV Better pay
+              11  FAV Higher income from self-employment or property
+              12  FAV More work, hence more income
+              13  FAV Increased contributions from outside FU
+              14  FAV Lower prices
+              15  FAV Lower taxes; low or unchanged taxes
+              16  FAV Decreased expenses
+              18  FAV Higher interest rates; tight credit
+              19  FAV Better asset position
+              20  FAV Debt, interest or debt payments low or lower
+              21  FAV Change in family composition - higher income or better off
+              23  FAV Good times, no recession (not codeable above)
+              27  FAV Other reasons for making FU better off
+              38  FAV Reference to government economic policy
+              39  FAV Income tax refund
+              50  UNFAV Lower pay
+              51  UNFAV Lower income from self-employment or property
+              52  UNFAV Less work, hence less income
+              53  UNFAV Decreased/Unchanged contributions from outside FU
+              54  UNFAV High(er) prices
+              55  UNFAV Higher interest rates; tight credit
+              56  UNFAV High, higher taxes (except 57)
+              57  UNFAV Income taxes
+              58  UNFAV Increased expenses; more people to be supported by FU
+              59  UNFAV Worse asset position
+              60  UNFAV Debt
+              61  UNFAV Change in family composition - lower income or worse off
+              63  UNFAV Bad times, recession (not codeable above)
+              64  UNFAV Strike(s)-- not codeable in 52
+              67  UNFAV Other reasons for making FU worse off
+              78  UNFAV Reference to government economic policy
+              98  DK
+              99  NA
+             333  No change and no pro-con reason given (Web only)
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/77-79
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 6
+
+
+      PAGO5              PERSONAL FINANCES B/W YEAR AGO
+
+           Now thinking back 5 years, would you say that you are better
+           off or worse off financially now than you were 5 years ago?
+
+           VALUE  LABEL
+               1  Better now
+               3  Same
+               5  Worse now
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/81
+
+      ________________________________________________________________________
+
+      PEXP               PERSONAL FINANCES B/W NEXT YEAR
+
+           Now looking ahead--do you think that a year from now you will
+           be better off financially, or worse off, or just about the
+           same as now?
+
+           VALUE  LABEL
+               1  Will be better off
+               3  Same
+               5  Will be worse off
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/83
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 7
+
+
+      PEXP5              PERSONAL FINANCES B/W IN 5YRS
+
+           And 5 years from now, do you expect that you (and your family living there)
+           will be better off financially, worse off financially, or just about
+           the same as now?
+
+           VALUE  LABEL
+               1  Will be better off
+               3  Same
+               5  Will be worse off
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/85
+
+      ________________________________________________________________________
+
+      INEXQ1             FAMILY INCOME U/D NEXT YEAR
+
+           During the next 12 months, do you expect your income to be
+           higher or lower than during the past year?
+
+           VALUE  LABEL
+               1  Higher
+               3  About the same
+               5  Lower
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/87
+
+      ________________________________________________________________________
+
+      INEXQ2             FAMILY INCOME % U/D NEXT YEAR
+
+           By about what percent do you expect your income to
+           (increase/decrease) during the next 12 months?
+
+           VALUE  LABEL
+              95  95% or more
+              98  DK
+              99  NA
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/89-90
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 8
+
+
+      INEX               FAMILY INCOME EXPECTATIONS 1 YEAR RECODED
+
+           Income expectations for next 12 months
+
+           VALUE  LABEL
+             -97  DK how much down
+              96  DK how much up
+              98  DK whether up or down
+              99  NA
+
+           Data type: numeric
+           Missing-data codes: -97,96-*
+           Record/columns: 1/92-94
+
+      ________________________________________________________________________
+
+      RINC               REAL FAMILY INCOME NEXT 1-2 YEARS
+
+           During the next year or two, do you expect that your income
+           will go up more than prices will go up, about the same, or
+           less than prices will go up?
+
+           VALUE  LABEL
+               1  Income up more than prices
+               3  Income up same as prices
+               5  Income up less than prices
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/96
+
+      ________________________________________________________________________
+
+      BAGO               ECONOMY BETTER/WORSE YEAR AGO
+
+           Would you say that at the present time business conditions
+           are better or worse than they were a year ago?
+
+           VALUE  LABEL
+               1  Better now
+               3  About the same
+               5  Worse now
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/98
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                              Page 9
+
+
+      BEXP               ECONOMY BETTER/WORSE NEXT YEAR
+
+           And how about a year from now, do you expect that in the
+           country as a whole business conditions will be better, or
+           worse than they are at present, or just about the same?
+
+           VALUE  LABEL
+               1  Better a year from now
+               3  About the same
+               5  Worse a year from now
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/100
+
+      ________________________________________________________________________
+
+      BUS12              ECONOMY GOOD/BAD NEXT YEAR
+
+           Now turning to business conditions in the
+           country as a whole--do you think that during the next 12
+           months we'll have good times financially, or bad times,
+           or what?
+
+           VALUE  LABEL
+               1  Good times
+               2  Good with qualifications
+               3  Pro-con
+               4  Bad with qualifications
+               5  Bad times
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/102
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                             Page 10
+
+
+      BUS5               ECONOMY GOOD/BAD NEXT 5 YEARS
+
+           Looking ahead, which would you say is more likely -- that
+           in the country as a whole we'll have continuous good times
+           during the next 5 years or so, or that we will have periods
+           of widespread unemployment or depression, or what?
+
+           VALUE  LABEL
+               1  Good times
+               2  Good with qualifications
+               3  Pro-con
+               4  Bad with qualifications
+               5  Bad times
+              98  DK
+              99  NA
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/104-105
+
+      ________________________________________________________________________
+
+      NEWS1              NEWS HEARD OF CHANGES IN BUS COND (1)
+
+           During the last few months, have you heard of any favorable
+           or unfavorable changes in business conditions? What did you
+           hear?
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/107-108
+
+      ________________________________________________________________________
+
+      NEWS2              NEWS HEARD OF CHANGES IN BUS COND (2)
+
+           During the last few months, have you heard of any favorable
+           or unfavorable changes in business conditions? What did you
+           hear?
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/110-111
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                             Page 11
+
+
+      UNEMP              UNEMPLOYMENT MORE/LESS NEXT YEAR
+
+           How about people out of work during the coming 12 months --
+           do you think that there will be more unemployment than now,
+           about the same, or less?
+
+           VALUE  LABEL
+               1  More unemployment
+               3  About the same
+               5  Less unemployment
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/113
+
+      ________________________________________________________________________
+
+      GOVT               GOVERNMENT ECONOMIC POLICY
+
+           As to the economic policy of the government -- I mean steps
+           taken to fight inflation or unemployment -- would you say the
+           government is doing a good job, only fair, or a poor job?
+
+           VALUE  LABEL
+               1  Good job
+               3  Only fair
+               5  Poor job
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/115
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                             Page 12
+
+
+      RATEX              INTEREST RATES UP/DOWN NEXT YEAR
+
+           No one can say for sure, but what do you think will happen to
+           interest rates for borrowing money during the next 12
+           months--will they go up, stay the same, or go down?
+
+           VALUE  LABEL
+               1  Go up
+               3  Stay the same
+               5  Go down
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/117
+
+      ________________________________________________________________________
+
+      PX1Q1              PRICES UP/DOWN NEXT YEAR
+
+           During the next 12 months, do you think that prices in
+           general will go up, or go down, or stay where they are now?
+
+           VALUE  LABEL
+               1  Go up
+               2  Go up (at same rate)
+               3  Same
+               5  Go down
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/119
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                             Page 13
+
+
+      PX1Q2              PRICES % UP/DOWN NEXT YEAR
+
+           By about what percent do you expect prices to go (up/down) on
+           the average, during the next 12 months?
+
+           VALUE  LABEL
+              95  95% or more
+              98  DK
+              99  NA
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/121-122
+
+      ________________________________________________________________________
+
+      PX1                PRICE EXPECTATIONS 1YR RECODED
+
+           Price expectations for next 12 months recoded
+
+           VALUE  LABEL
+             -97  DK how much down
+              96  DK how much up
+              98  DK whether up or down
+              99  NA
+
+           Data type: numeric
+           Missing-data codes: -97,96-*
+           Record/columns: 1/124-126
+
+      ________________________________________________________________________
+
+      PX5Q1              PRICES UP/DOWN NEXT 5 YEARS
+
+           What about the outlook for prices over the next 5 to 10
+           years?  Do you think prices will be higher, about the same,
+           or lower, 5 to 10 years from now?
+
+           VALUE  LABEL
+               1  Go up
+               2  Go up (at same rate)
+               3  Same
+               5  Go down
+               8  DK
+               9  NA
+
+           Data type: numeric
+           Missing-data codes: 8-*
+           Record/column: 1/128
+
+
+
+
+                                   April 13, 2025
+
+
+
+      Surveys of Consumers                                             Page 14
+
+
+      PX5Q2              PRICES % UP/DOWN NEXT 5 YEARS
+
+           By about what percent per year do you expect prices to go
+           (up/down) on the average, during the next 5 to 10 years?
+
+           VALUE  LABEL
+              95  95% or more
+              98  DK
+              99  NA
+
+           Data type: numeric
+           Missing-data codes: 98-*
+           Record/columns: 1/130-131
+
+      ________________________________________________________________________
+
+      PX5                PRICE EXPECTATIONS 5YR RECODED
+
+           Price expectations for next 5 years recoded
+
+           VALUE  LABEL
+             -97  DK how much down
+              96  DK how much up
+              98  DK whether up or down
+              99  NA
+
+           Data type: numeric
+           Missing-data codes: -97,96-*
+           Record/columns: 1/133-135
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   April 13, 2025
